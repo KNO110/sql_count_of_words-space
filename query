@@ -1,0 +1,16 @@
+DECLARE @string nvarchar(MAX) = 'Бог на небесах - с миром всё в порядке.';
+
+SET @string = REPLACE(@string, ' -', '');
+
+DECLARE @count_words int;
+SET @count_words = LEN(@string) - LEN(REPLACE(@string, ' ', '')) + 1;
+
+DECLARE @count_spaces int;
+SET @count_spaces = LEN(@string) - LEN(REPLACE(@string, ' ', '')) + 1;
+
+SELECT 
+    @count_words as Колво_слов,
+    @count_spaces as Колво_пробелов;
+
+SELECT
+@string as itog;
